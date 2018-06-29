@@ -9,7 +9,8 @@ export default class TodoList extends React.Component{
 
   render() {
     var list = this.props.todos.map((todo, i)=>{
-      return <Todo key={i} task={todo.taskText} completed={todo.completed}/>
+      return <Todo key={i} index={i} task={todo.taskText} completed={todo.completed}
+        xClick={(index) => this.props.todoXClick(index)} toggle={(index) => this.props.toggleTodo(index)}/>
     })
     return (
       <ul>
